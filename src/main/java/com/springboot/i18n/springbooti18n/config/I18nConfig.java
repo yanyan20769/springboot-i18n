@@ -29,13 +29,6 @@ public class I18nConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
-        localeChangeInterceptor.setParamName(Constants.MY_LANGUAGE);
-        return localeChangeInterceptor;
-    }
-
-    @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setAlwaysUseMessageFormat(true);
@@ -46,8 +39,21 @@ public class I18nConfig implements WebMvcConfigurer {
         return messageSource;
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor());
-    }
+//    /**
+//     * 用于处理动态改变语言
+//     */
+//    @Bean
+//    public LocaleChangeInterceptor localeChangeInterceptor() {
+//        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
+//        localeChangeInterceptor.setParamName(Constants.MY_LANGUAGE);
+//        return localeChangeInterceptor;
+//    }
+//
+//    /**
+//     * 添加拦截器
+//     */
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(localeChangeInterceptor());
+//    }
 }
