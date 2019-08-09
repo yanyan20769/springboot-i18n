@@ -13,9 +13,12 @@ import java.util.Locale;
  * @date 2018/10/15 11:35
  */
 public class MyLocaleResolver implements LocaleResolver {
+
     @Override
     public Locale resolveLocale(HttpServletRequest request) {
-        String language = request.getParameter(Constants.MY_LANGUAGE);
+        String language = StringUtils.isEmpty(request.getHeader(Constants.MY_LANGUAGE))
+                ? request.getParameter(Constants.MY_LANGUAGE)
+                : request.getHeader(Constants.MY_LANGUAGE);
         Locale locale = Locale.getDefault();
         if (!StringUtils.isEmpty(language)) {
             String[] strs = language.split("_");

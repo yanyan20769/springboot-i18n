@@ -7,7 +7,7 @@ package com.springboot.i18n.springbooti18n.constant;
 public final class Constants {
 
     /**
-     * 自己定义的request头参数
+     * 自定义的request头参数
      */
     public static final String MY_LANGUAGE = "my_language";
 

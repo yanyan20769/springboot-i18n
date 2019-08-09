@@ -38,7 +38,7 @@ public class I18nConfig implements WebMvcConfigurer {
         messageSource.setBasename(basePackage);
         return messageSource;
     }
-
+//
 //    /**
 //     * 用于处理动态改变语言
 //     */
